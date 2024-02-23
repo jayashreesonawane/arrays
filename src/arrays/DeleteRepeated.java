@@ -1,0 +1,29 @@
+class DeleteRepeated 
+{
+    public static void main(String[] args) 
+	{
+        int[] ar = {1, 2, 1, 3, 5, 2, 3, 3, 5, 6, 3, 4, 5};
+        int length = ar.length;
+
+        for (int i = 0; i < length; i++) 
+		{
+            for (int j = i + 1; j < length; j++) 
+			{
+                if (ar[i] == ar[j]) 
+				{
+                    for (int k = j; k < length - 1; k++) 
+					{
+                        ar[k] = ar[k + 1];
+                    }
+                    length--;
+                    j--;
+                }
+            }
+        }
+
+        for (int i = 0; i < length; i++) 
+		{
+            System.out.print(ar[i] + " ");
+        }
+    }
+}
